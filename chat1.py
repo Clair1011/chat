@@ -9,6 +9,7 @@ def read_file(filename):
 #轉換檔案
 def convert(lines):
 	new = []
+	person = None
 	for line in lines:
 		if line == '程沖':
 			person = '程沖'
@@ -22,7 +23,8 @@ def convert(lines):
 		elif line == '江慧婷':
 			person = '江慧婷'
 			continue
-		new.append(person + ': ' + line)
+		if person:
+			new.append(person + ': ' + line)
 	return new
 
 #輸出轉換的檔案
